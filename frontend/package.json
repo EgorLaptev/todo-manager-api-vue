@@ -1,0 +1,33 @@
+{
+  "name": "todo-manager",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "register-service-worker": "^1.7.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-pwa": "^4.5.15",
+    "@vue/cli-plugin-router": "^4.5.15",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "stylus": "^0.56.0",
+    "stylus-loader": "^6.2.0",
+    "vue-pwa-asset-generator": "^1.6.1"
+  },
+  "engines": {
+    "node": "^14.16.1",
+    "npm": "^6.14.12"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

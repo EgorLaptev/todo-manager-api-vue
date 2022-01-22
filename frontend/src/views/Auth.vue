@@ -1,0 +1,192 @@
+<template>
+
+    <section id="authorization" class="authorization">
+
+        <div class="login">
+
+            <h2 class="login__title">Log in</h2>
+
+            <form method="POST" class="login__form">
+                <input type="text" name="email" placeholder="E-mail" autocomplete="off">
+                <input type="password" placeholder="Password" name="password" autocomplete="off">
+                <input type="submit" value="Log in">
+            </form>
+
+        </div>
+
+        <div class="register">
+
+            <h2 class="register__title">Register</h2>
+
+            <form method="POST" class="register__form">
+
+                <input type="text" name="email" placeholder="E-mail" autocomplete="off">
+                <input type="text" name="name" placeholder="Username" autocomplete="off">
+                <input type="password" placeholder="Password" name="password" autocomplete="off">
+                <input type="password" name="password_confirmation" placeholder="Confirm your password" autocomplete="off">
+                <input type="submit" value="Register">
+
+            </form>
+
+        </div>
+
+    </section>
+
+</template>
+
+<script>
+    export default {
+        name: "Auth"
+    }
+</script>
+
+<style>
+
+:root {
+    --accent-1: #8ACAFE;
+    --accent-2: #6abcff;
+    --accent-3: #b1d9fc ;
+}
+
+body {
+    overflow: hidden;
+}
+
+.authorization {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 150px;
+    position: fixed;
+    inset: 0;
+    background-size: 50vw auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    perspective: 1100px;
+}
+
+.login,
+.register {
+    z-index: 2;
+    padding: 50px;
+    border-radius: 0px;
+    text-align: center;
+    background: #FFF;
+    transition: transform .3s;
+    box-shadow: 0 0 50px 10px #F1F1F1;
+}
+
+.login__form,
+.register__form {
+    display: grid;
+    grid-gap: 15px;
+
+}
+
+.register__form {
+    grid-template-columns: 1fr 1fr;
+}
+
+.login__title,
+.register__title {
+    line-height: 1.35em;
+    font-size: 78rem;
+    color: #CBE7FE;
+    text-transform: uppercase;
+    margin-bottom: 75px;
+}
+
+
+.login__form input,
+.register__form input {
+    color: var(--accent-3);
+    font-size: 20rem;
+    border-radius: 0;
+    border: 2px solid var(--accent-3);
+    outline: none;
+    padding: 10px 25px;
+    text-align: center;
+}
+
+.login__form input:focus,
+.register__form input:focus {
+    border-color: var(--accent-1);
+    color: var(--accent-1);
+}
+
+.login__form input:focus::placeholder,
+.register__form input:focus::placeholder {
+    opacity: 0;
+}
+
+.login__form input::placeholder,
+.register__form input::placeholder {
+    color: var(--accent-3);
+    transition: opacity .3s;
+}
+
+.login__form input[type='submit'],
+.register__form input[type='submit'] {
+    cursor: pointer;
+    border-color: var(--accent-1);
+    background: var(--accent-1);
+    color: white;
+}
+
+.login__form input[type='submit']:hover,
+.register__form input[type='submit']:hover {
+    border-color: var(--accent-2);
+    background-color: var(--accent-2);
+}
+
+.register__form input[type='submit'] {
+    grid-column: 1 / -1;
+}
+
+.alerts {
+    grid-column: 1 / -1;
+    color: #FD300C;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .authorization {
+        grid-template-columns: 1fr;
+    }
+    .login,
+    .register {
+        max-width: 95vw;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .authorization h2 {
+        font-size: 65px;
+    }
+    .register__form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .authorization h2 {
+        font-size: 30px;
+    }
+    .register,
+    .login {
+        width: 95vw;
+        padding: 50px 5px;
+    }
+    .authorization form input {
+        font-size: 15px;
+        width: 100%;
+    }
+    .register__form {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>

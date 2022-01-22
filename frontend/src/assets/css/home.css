@@ -1,0 +1,347 @@
+.todosApp {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50px minmax(100px, 3fr) 10fr minmax(250px, 5fr);
+}
+
+.app__body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    border-right: 1px solid #EEE;
+}
+
+.app__body::-webkit-scrollbar {
+    background: transparent;
+}
+
+
+.app__todo {
+    position: relative;
+    padding: 25px;
+}
+
+.todo__title-input {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+
+.todo__content-input {
+    padding: 25px;
+    position: absolute;
+    inset: 0;
+    top: 10%;
+    width: 100%;
+    margin-top: 50px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    resize: none;
+    background: transparent;
+}
+
+.todo__title-input::placeholder,
+.todo__content-input::placeholder {
+    color: #CECECE;
+}
+
+/* Aside */
+.app__aside {
+    position: relative;
+    padding: 10px 0;
+    border-right: 1px solid #EEE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.aside__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    gap: 10px;
+}
+
+
+.aside__item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+}
+
+.aside__item_active,
+.aside__item:hover {
+    color: #8ACAFE;
+}
+
+.aside__item:first-of-type {
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    background: #DDD;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.app__filters {
+    padding: 50px 15px;
+    border-right: 1px solid #EEE;
+}
+
+
+.lists-list__add,
+.tags-list__add {
+    float: right;
+    background: #F1F1F1;
+    width: 25px;
+    height: 25px;
+    border: none;
+    font-size: 18px;
+    border-radius: 50%;
+    color: #AAA;
+    cursor: pointer;
+}
+
+.tags-list,
+.lists-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 50px 0;
+}
+
+.tags-list__title,
+.lists-list__title {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: #BBB;
+}
+
+.tags-list__item,
+.lists-list__item {
+    font-size: 17px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.tags-list__item:hover,
+.lists-list__item:hover,
+.activeTag {
+    border-left: 3px solid #8ACAFE;
+    background: #F4FAFE;
+}
+
+.app_add-todo {
+    border-radius: 3px;
+    border: none;
+    padding: 10px 25px;
+    font-size: 17px;
+    outline: none;
+    background: #F5f5f5;
+    width: 90%;
+}
+
+.app_add-todo::placeholder {
+    color: #DDD;
+}
+
+.todos-list {
+    width: 90%;
+    margin: 0;
+    padding: 30px 0 0 0;
+    list-style: none;
+}
+
+.todo-item {
+    position: relative;
+    padding: 0 20px;
+    border-left: 3px solid #8ACAFE;
+    margin: 5px 0;
+    background: #F4FAFE;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.todo-item__input,
+.lists-list__input,
+.tags-list__input {
+    position: relative;
+    background: transparent;
+    border: none;
+    font-size: 17px;
+    outline: none;
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+}
+
+.todo-item__input::placeholder,
+.tags-list__input::placeholder,
+.lists-list__input::placeholder {
+    color: #DDD;
+}
+
+.todo-item__completed {
+    height: 15px;
+    width: 15px;
+    border: none;
+    margin-right: 10px;
+}
+
+.todo-item__more {
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    color: #444;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.todo-item__tags,
+.todo__tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.todo__tags {
+
+}
+
+.todo-item__tag,
+.todo__tag {
+    border-radius: 3px;
+    padding: 0 5px;
+    background: #CBE7FE;
+    font-size: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    max-width: 125px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.todo__tag_add {
+    border: 1px solid #8ACAFE;
+    color: #8ACAFE;
+    background-color: transparent;;
+}
+
+.todo__tag_add:hover {
+    background: #F4FAFE;
+}
+
+/* Options popup */
+.options-popup {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    padding: 0;
+    background: #CBE7FE;
+    list-style: none;
+    z-index: 10;
+}
+
+.options-popup__item button {
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    color: #F4FAFE;
+}
+
+.options-popup__item button:hover {
+    background: #FEDDDE;
+}
+
+/* Upload photo */
+.upload-photo,
+.search-todos {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    background: #FAFAFA;
+    padding: 25px 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 1000px 10px #E5E5E5;
+}
+
+.upload-photo__icon {
+    margin-top: 20px;
+    font-size: 100px;
+    color: #DDD;
+    cursor: pointer;
+}
+
+.upload-photo__input {
+    display: none;
+}
+
+.upload-photo__buttons-group {
+    padding: 10px 20px 20px 20px;
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.upload-photo__button {
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.upload-photo__button_ok {
+    background: #8ACAFE;
+    color: white;
+}
+
+.upload-photo__preview {
+    width: 225px;
+    height: 225px;
+    right: 0;
+}
+
+.upload-photo__preview,
+.upload-photo__picture {
+    border-radius: 3px 3px 0 0 ;
+    background: #000;
+    padding: 0;
+    margin: 0;
+}
+
